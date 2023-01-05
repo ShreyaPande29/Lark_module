@@ -6,7 +6,7 @@ from lark.reconstruct import Reconstructor
 def test_json_example():
         test_json = '''
             {
-                "Hostname" : myserver',
+                "EventReceivedTime" : {},
                 "empty_array"  : [],
                 "booleans"     : { "YES" : true, "NO" : false },
                 "numbers"      : [ 0, 1, -2, 3.3, 4.4e5, 6.6e-7 ],
@@ -25,7 +25,6 @@ def test_json_example():
                   | "true"             -> true
                   | "false"            -> false
                   | "null"             -> null
-                  
 
             array  : "[" [value ("," value)*] "]"
             object : "{" [pair ("," pair)*] "}"
